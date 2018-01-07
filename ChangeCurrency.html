@@ -1,0 +1,28 @@
+<div>
+  <a ui-sref="currency({id:'EUR'})">EUR</a>
+  <a ui-sref="currency1({id:'USD'})">USD</a>
+  <a ui-sref="home({id:'INR'})">INR</a>
+</div>
+<div ng-controller="ChangeCurrencyCtrl as htpc">
+<table style="width:75%">
+ <tr>
+   <th class="cell">Id</th>
+   <th class="cell">Name</th>
+   <th class="cell">Price</th>
+   <th class="cell">Market Cap</th>
+   <th class="cell">Available Supply</th>
+   <th class="note">Notes</th>
+ </tr>
+ <div class="error">
+   <tr ng-repeat='obj in htpc.items'>
+     <td><span ng-bind='obj.rank'></span></td>
+     <td class="link"><a ui-sref="home.detail({id:obj.id})">{{obj.name|uppercase}}</a></td>
+     <td>{{obj.price_eur}}</td>
+     <td>{{obj.last_updated}}</td>
+     <td><span ng-bind='obj.market_cap_eur'></span></td>
+     <td></td>
+   </tr>
+ </div>
+ </table>
+ <button type="button" ui-sref="home">Refresh</button>
+</div>

@@ -1,0 +1,26 @@
+<div ng-controller="MainCtrl as htpc">
+<table style="width:75%">
+ <tr>
+   <th class="cell">Id</th>
+   <th class="cell">Name</th>
+   <th class="cell">Price</th>
+   <th class="cell">24h_volume</th>
+   <th class="cell">Market cap</th>
+   <th class="note">Notes</th>
+ </tr>
+ <div class="error">
+   <tr ng-repeat='obj in htpc.items'>
+       <td><span ng-bind='obj.rank'></span></td>
+       <td class="link"><a ui-sref="detail({id:obj.id,index:obj.rank})">{{obj.name|uppercase}}</a></td>
+       <td>{{obj.price_inr|currency:'Rs. '}}</td>
+       <td>{{obj.last_updated}}</td>
+       <td><span ng-bind='obj.market_cap_inr'></span></td>
+       <td>{{htpc.notes[$index]}}</td>
+   </tr>
+
+ </div>
+ </table>
+
+ <button type="button" ui-sref="home">Refresh</button>
+
+</div>

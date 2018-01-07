@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app='RoutingApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="angular-ui-router.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="css\style.css" media="screen">
+    <title>Coin Market</title>
+  </head>
+  <body>
+    <div ng-controller="MainCtrl as ctrl">
+      <select ng-model="ctrl.buttonState" ng-options="opt.value as opt.label for opt in ctrl.options">Select</select>
+    </div>
+
+      <ui-view></ui-view>
+
+  </body>
+</html>

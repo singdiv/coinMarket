@@ -1,0 +1,19 @@
+<div ng-controller="DetailCtrl as dctrl">
+<table style="width:5%">
+ <tr>
+   <th>PROPERTIES</th>
+   <th>Values</th>
+ </tr>
+      <tr ng-repeat="(key, val) in dctrl.items1[0]">
+      <td class="prop">{{key|uppercase}}</td>
+      <td>{{val}}</td>
+     </tr>
+ </table>
+
+
+<div class="btn">
+  <button type="button" name="button">Back</button>
+</div>
+
+Notes:<input type="text" ng-model="dctrl.msg"><button type="button" ng-click="dctrl.addNotes();">Add Notes</button>
+</div>
